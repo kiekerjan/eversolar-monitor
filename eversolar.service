@@ -1,0 +1,13 @@
+[Unit]
+Description=Eversolar monitor
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/eversolarmonitor
+ExecStart=/opt/eversolarmonitor/eversolar.pl
+Restart=always
+
