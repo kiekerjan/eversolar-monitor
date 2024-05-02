@@ -20,7 +20,7 @@ Raspberry pi and known good USB to RS485 adapters (and known bad adapters)
 
 
 ## [Setup\_from\_image\_file](Setup_from_image_file.md) ##
-How to setup the system using a single file that contains a working operating system with all software installed. ONLY on Raspberry Pi model B - later versions of Raspberry require full install, unfortunately. The image is way too old
+How to setup the system using a single file that contains a working operating system with all software installed. ONLY on Raspberry Pi model B and model 2 - Raspberry 3 and 4 require full install it appears. The image is way too old for such new systems.
 
 ## [Software\_installation](Software_installation.md) ##
 How to setup the software stack required from scratch, you're IT savvy, if this your path.
