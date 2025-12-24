@@ -155,6 +155,7 @@ $config->define("influxdb_dbname=s");
 $config->define("influxdb_panelname=s");
 $config->define("influxdb_username=s");
 $config->define("influxdb_password=s");
+$config->define("influxdb_token=s");
 $config->define("mqtt_enabled=s");
 $config->define("mqtt_inverter_model=s");               
 $config->define("mqtt_host=s");
@@ -1253,10 +1254,10 @@ while (42) {
                 my $influxdb_dbname    = $config->influxdb_dbname;
                 my $influxdb_panelname = $config->influxdb_panelname;
                 my $influxdb_username  = $config->influxdb_username;
-                my $influxdb_password  = $config->influxdb_password;
+                my $influxdb_token     = $config->influxdb_token;
                 my $time               = time() * 1000000000;
                 my $cmd =
-                         `curl -s -i -XPOST "http://$influxdb_address:$influxdb_port/write?db=$influxdb_dbname" -u $influxdb_username:$influxdb_password --data-binary "usage,panel=$influxdb_panelname ac_imp=$ac_imp,ac_volts=$ac_volt,dc_imp=$dc_imp,dc_volts=$dc_volt,power=$pac,temp=$temp,total=$e_total,totaltoday=$e_today_kwh $time"`;
+                         `curl -s -i --header "Authorization: Token $influxdb_token" -XPOST "http://$influxdb_address:$influxdb_port/write?db=$influxdb_dbname" --data-binary "usage,panel=$influxdb_panelname ac_imp=$ac_imp,ac_volts=$ac_volt,dc_imp=$dc_imp,dc_volts=$dc_volt,power=$pac,temp=$temp,total=$e_total,totaltoday=$e_today_kwh $time"`;
                 chomp($cmd);
                 
                 if ( index($cmd, "204 No Content") == -1 ) {
