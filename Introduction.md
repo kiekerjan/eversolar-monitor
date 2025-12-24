@@ -20,16 +20,21 @@ Raspberry pi and known good USB to RS485 adapters (and known bad adapters)
 
 
 ## [Setup\_from\_image\_file](Setup_from_image_file.md) ##
-How to setup the system using a single file that contains a working operating system with all software installed.
+How to setup the system using a single file that contains a working operating system with all software installed. ONLY on Raspberry Pi model B and model 2. The old image does not support Home Assistant integration!
+Raspberry 3 and 4 require full install! The image is way too old for such new systems.
 
 ## [Software\_installation](Software_installation.md) ##
 How to setup the software stack required from scratch, you're IT savvy, if this your path.
+The dockumentation is from old PRI 2 systems, newer OS will be a tad different
 
 ## [Other\_sources\_of\_information](Other_sources_of_information.md) ##
 Links to downloadable images, documentation, support threads
 
 ## [Usage, data extraction](Usage.md) ##
 How to extract data easily from the database
+
+Home Assistant integration:
+Modify the [mqtt] section in the ini file, and the script will populate your HA with all data available from your inverter!
 
 ## [Feedback](Feedback.md) ##
 A place to let other people know if got the system working.
