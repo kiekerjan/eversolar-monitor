@@ -1359,6 +1359,7 @@ while (42) {
                            $config_data{'name'} = "PV Total Energy Today";
                            $config_data{'unit_of_measurement'} = "kWh";
                            $config_data{'device_class'} = "energy";
+                           $config_data{'state_class'} = "total_increasing";
 
                        } elsif ( $_[0] eq "e_total" ){
                            $config_data{'icon'} = "mdi:solar-power";
